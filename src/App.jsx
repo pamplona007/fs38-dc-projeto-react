@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <main>
-        <Header />
+        <Header name="Gideão" />
         <Body />
         <Footer />
       </main>

@@ -1,5 +1,7 @@
 import Logo from "../../assets/img/logo/logo.png";
-import style from "./header.module.css";
+import style from "./Header.module.css";
+import SearchIcon from "../icons/SearchIcon";
+import Cart from "../icons/Cart";
 
 function Header() {
   return (
@@ -9,28 +11,30 @@ function Header() {
           <img className={style.logoImg} src={Logo} alt="" />
         </div>
 
-        <div className="search">
-          <div className={style.input}>
-            <input
-              className={style.inputSearch}
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Pesquisar produto..."
-            />
-          </div>
+        <div className={style.search}>
+          <input
+            className={style.inputSearch}
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Pesquisar produto..."
+          />
+          <i className={style.iconSearch}>
+            <SearchIcon />
+          </i>
         </div>
 
         <div className={style.storeLinks}>
-          <a className="sign-up" href="">
+          <a className={style.signUp} href="">
             Cadastre-se
           </a>
           <a className={style.btnLogin} href="">
             Entrar
           </a>
-          <a className="cart" href="">
-            Cart
-          </a>
+          <div className={style.cart}>
+            <Cart />
+            <span>12</span>
+          </div>
         </div>
       </header>
     </>
