@@ -1,7 +1,9 @@
 function Body() {
   return (
     <>
-      <h2>Conteudo</h2>
+      <div className="content">
+        <h2>Conteudo</h2>
+      </div>
     </>
   );
 }
