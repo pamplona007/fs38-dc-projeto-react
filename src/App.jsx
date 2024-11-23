@@ -1,20 +1,16 @@
+import { Route, Routes } from "react-router";
 import "./App.css";
-import Body from "./components/body/Body";
-import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
-import MainBanner from "./components/main-banner/MainBanner";
-import Menu from "./components/menu/Menu";
+import Layout from "./views/layout/Layout";
+import Home from "./views/home/Home";
 
 function App() {
   return (
     <>
-      <main>
-        <Header />
-        <Menu />
-        <MainBanner />
-        <Body />
-        <Footer />
-      </main>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
     </>
   );
 }
