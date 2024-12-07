@@ -12,12 +12,17 @@
   margin: 0 auto;
 }
 
-.menu > li.active {
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu li.active {
   color: #c92071;
   border-bottom: 2px solid #c92071;
 }
 
-.menu > li.active,
-.menu > li.item {
+.menu li.active,
+.menu li.item {
   font-size: 16px;
 }
