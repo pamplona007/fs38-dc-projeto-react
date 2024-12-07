@@ -1,7 +1,7 @@
-function ProductBadge() {
+function ProductBadge({ discount }) {
   return (
     <>
-      <div>Badge do produto</div>
+      <div>{discount}</div>
     </>
   );
 }
