@@ -37,6 +37,11 @@
   /* Tamanho FONTES */
 }
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 p,
 h1,
 h2,
