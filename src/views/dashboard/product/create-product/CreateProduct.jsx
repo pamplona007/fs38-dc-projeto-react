@@ -1,4 +1,4 @@
-import "./Home.css";
+import "./CreateProduct.css";
 function Home() {
   const addProduct = () => {
     const formProduct = document.forms[0];
