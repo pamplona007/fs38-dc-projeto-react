@@ -1,5 +1,9 @@
+import { useNavigate } from "react-router";
 import "./CreateProduct.css";
+import { productListDashboard } from "../../../../router/dashboard/dashboard-routes-config";
+
 function Home() {
+  const navigate = useNavigate();
   const addProduct = () => {
     const formProduct = document.forms[0];
     const formData = new FormData(formProduct);
@@ -14,6 +18,8 @@ function Home() {
       headers: {
         "Content-Type": "application/json",
       },
+    }).then((response) => {
+      navigate(productListDashboard);
     });
   };
 
@@ -32,7 +38,7 @@ function Home() {
           <label htmlFor="product_name">Descrição</label>
           <input type="text" name="description" />
         </div>
-        <button type="button" onClick={addProduct}>
+        <button className="btn btn-success" type="button" onClick={addProduct}>
           Cadastrar
         </button>
       </form>

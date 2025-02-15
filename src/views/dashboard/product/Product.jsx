@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 function Home() {
   const [productList, setProductList] = useState([]);
@@ -17,7 +18,14 @@ function Home() {
 
   return (
     <>
-      <table>
+      <div className="table-actions">
+        <Link to="/dashboard/create-product">
+          <button className="btn btn-info btn-sm me-3">
+            Cadastrar produto
+          </button>
+        </Link>
+      </div>
+      <table className="table table-sm table-striped">
         <thead>
           <th>Id</th>
           <th>Name</th>
