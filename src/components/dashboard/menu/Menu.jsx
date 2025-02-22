@@ -1,12 +1,17 @@
 import { NavLink } from "react-router";
 import style from "./Menu.module.css";
-import { productListDashboard } from "../../../router/dashboard/dashboard-routes-config";
+import {
+  productListDashboard,
+  homeDashboard,
+} from "../../../router/dashboard/dashboard-routes-config";
 
 function Menu() {
   return (
     <>
       <ul className={style.li}>
-        <li>Dashboard</li>
+        <li>
+          <NavLink to={homeDashboard}>Dashboard</NavLink>
+        </li>
         <li>
           <NavLink to={productListDashboard}>Produtos</NavLink>
         </li>
