@@ -15,7 +15,15 @@ function Home() {
   };
 
   const listProduct = () => {
-    fetch("http://localhost:3000/products")
+    const jwtToken = localStorage.getItem("token");
+
+    fetch("http://localhost:3000/products", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwtToken}`,
+      },
+    })
       .then((response) => response.json())
       .then((response) => {
         setProductList(response);
