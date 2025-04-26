@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 const initialAddressValues = {
     street: '',
@@ -11,7 +11,7 @@ const initialAddressValues = {
 }
 
 const initialValues = {
-    name: 'Pamplona',
+    name: '',
     email: '',
     birthdate: '',
     cpf: '',
@@ -48,6 +48,13 @@ function Register() {
                         errors.name = "Nome é obrigatório"
                     }
 
+                    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,255}$/gm
+                    const passwordIsValid = passwordRegex.test(values.password);
+                
+                    if (!passwordIsValid) {
+                        errors.password = 'A senha não é válida'
+                    }
+
                     return errors;
                 }}  
             >
@@ -56,7 +63,7 @@ function Register() {
                         <div className="col-8">
 
                             <div className="mb-3">
-                                <label for="name" className="form-label">Nome</label>
+                                <label htmlFor="name" className="form-label">Nome</label>
                                 <Field 
                                     type="text" 
                                     className="form-control" 
@@ -68,7 +75,7 @@ function Register() {
                             </div>
 
                             <div className="mb-3">
-                                <label for="birthdate" className="form-label">Data de nascimento</label>
+                                <label htmlFor="birthdate" className="form-label">Data de nascimento</label>
                                 <Field 
                                     type="date" 
                                     className="form-control" 
@@ -79,7 +86,7 @@ function Register() {
                             </div>
 
                             <div className="mb-3">
-                                <label for="email" className="form-label">Email address</label>
+                                <label htmlFor="email" className="form-label">Email address</label>
                                 <Field 
                                     type="email" 
                                     className="form-control" 
@@ -91,7 +98,7 @@ function Register() {
                             </div>
 
                             <div className="mb-3">
-                                <label for="password" className="form-label">Senha</label>
+                                <label htmlFor="password" className="form-label">Senha</label>
                                 <Field 
                                     type="password"
                                     className="form-control" 

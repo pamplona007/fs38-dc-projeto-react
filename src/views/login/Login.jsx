@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router";
+
 function Login() {
+  const navigate = useNavigate()
+
   function doLogin() {
     const formLogin = document.getElementById("form-login");
     const formDataLogin = new FormData(formLogin);
@@ -13,7 +17,8 @@ function Login() {
     })
       .then((response) => response.json())
       .then((response) => {
-        localStorage.setItem("token", JSON.stringify(response));
+        localStorage.setItem("token", response.token);
+        navigate('/dashboard')
       });
   }
   return (

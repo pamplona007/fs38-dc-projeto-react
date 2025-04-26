@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router";
 import homeRoutes from "./store/home/home";
 import dashboardRoutes from "./dashboard/dashboard-routes";
 import Login from "../views/login/Login";
