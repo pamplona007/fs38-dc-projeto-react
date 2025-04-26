@@ -3,7 +3,7 @@ function Login() {
     const formLogin = document.getElementById("form-login");
     const formDataLogin = new FormData(formLogin);
     const data = Object.fromEntries(formDataLogin);
-    console.log(data);
+
     fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
@@ -27,8 +27,7 @@ function Login() {
         </div>
         <div>
           <button type="button" onClick={doLogin}>
-            {" "}
-            Entrar{" "}
+            Entrar
           </button>
         </div>
       </form>
